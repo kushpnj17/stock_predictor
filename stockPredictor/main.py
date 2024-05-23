@@ -1,15 +1,18 @@
-import numpy as np
-import pandas as pd
-import math
-import pandas_datareader as web
-from sklearn.preprocessing import MinMaxScaler
-from keras import layers
-from keras import models
-import matplotlib.pyplot as plt
+# import math
+# import pandas_datareader as web
+# import numpy as np
+# import pandas as pd
+# from sklearn.preprocessing import MinMaxScaler
+# from keras import layers
+# from keras import models
+# import matplotlib.pyplot as plt
 import yfinance as yf
+# plt.style.use('fivethirtyeight')
 
-Apple = yf.Ticker("AAPL")
-Apple = Apple.history(period="max")
-print(Apple)
+sp500 = yf.Ticker("AAPL")
+sp500 = sp500.history(period = "max")
+# print(sp500)
 
-print(Apple.index)
+# print(sp500.index)
+
+print(sp500.plot.line(y = "Close", use_index = True))
